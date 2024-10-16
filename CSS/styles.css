@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    color: #444;
+    background-color: #f4f7f6;
+}
+
+/* Hero Section */
+#hero {
+    background-image: url('index1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fdfdfd;
+    text-align: center;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+.hero-content .btn {
+    padding: 12px 25px;
+    background-color: #ff5757;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: background-color 0.4s ease;
+}
+
+.hero-content .btn:hover {
+    background-color: #ff3838;
+}
+
+/* Navigation */
+nav {
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff5757;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::before {
+    transform: scaleX(1);
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Adding animated underline effect */
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #ff5757;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+/* Mobile Responsive Navigation */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}
+
+/* Intro & Highlights */
+.intro, .highlights {
+    padding: 50px;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #ff5757;
+}
+
+.intro p {
+    font-size: 20px;
+    color: #555;
+}
+
+.highlights {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.highlight {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 30%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.highlight:hover {
+    transform: translateY(-10px);
+}
+
+.highlight h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #ff5757;
+}
+
+.highlight p {
+    color: #666;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #282828;
+    color: white;
+}
+
+footer a {
+    color: #ff5757;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Conditions Page */
+.conditions {
+    padding: 70px 50px;
+    background-color: #f0f0f0;
+}
+
+.conditions .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.conditions h1 {
+    color: #ff5757;
+    margin-bottom: 25px;
+}
+
+.conditions p {
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 50px;
+}
+
+.condition-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.condition-item {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 25px);
+}
+
+.condition-item h2 {
+    color: #ff5757;
+    margin-bottom: 20px;
+}
+
+.condition-item p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 50px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #ff5757;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Contact Page */
+.contact {
+    padding: 70px 50px;
+    background-color: #fdfdfd;
+}
+
+.contact .container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact h1 {
+    color: #ff5757;
+    margin-bottom: 25px;
+}
+
+.contact p {
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 35px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #ff5757;
+    outline: none;
+}
+
+.btn {
+    padding: 12px 30px;
+    background-color: #ff5757;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+.btn:hover {
+    background-color: #ff3838;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .highlights {
+        flex-direction: column;
+    }
+
+    .highlight {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
